@@ -15,8 +15,11 @@
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container">
             <a class="navbar-brand" href="#">BookShop</a>
-            <a class="navbar-brand" href="{{ route('index') }}">Home</a>
-            <a class="navbar-brand" href="#">About us</a>
+            @guest
+            @else
+                <a class="navbar-brand" href="{{ route('index') }}">Home</a>
+                <a class="navbar-brand" href="#">About us</a>
+            @endguest
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
